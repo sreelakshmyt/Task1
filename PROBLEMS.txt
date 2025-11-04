@@ -1,0 +1,301 @@
+Inheritance
+Scenario 1: Online Shopping System
+
+Problem Statement:
+Design an Online Shopping System with multiple types of users and orders. The base class User has the following attributes:
+
+name (String)
+
+email (String)
+
+userType (String, can be "Guest", "Registered")
+
+The User class includes:
+
+A constructor to initialize name, email, and userType.
+
+A method displayInfo() that displays the user's information.
+
+Create two subclasses:
+
+Guest — This class does not require any additional attributes or methods.
+
+RegisteredUser — This class adds a loyaltyPoints (int) attribute and a method addLoyaltyPoints() to increase loyalty points based on the order value.
+
+Next, create a class Order with the following attributes:
+
+orderId (int)
+
+orderDate (String)
+
+totalAmount (double)
+
+A method applyDiscount() to apply a discount to the order, based on the userType. For example:
+
+If the user is a Guest, no discount.
+
+If the user is a RegisteredUser, apply a 10% discount.
+
+In the main() method, create instances of Guest and RegisteredUser, create Order objects for each, and display the user information along with the final order amount (after applying the discount).
+
+Requirements:
+
+Demonstrate method overriding and constructor chaining in the context of inheritance.
+
+Show how polymorphism works with the displayInfo() method across both Guest and RegisteredUser.
+
+Implement logic in the Order class to apply discounts based on the userType.
+
+Scenario 2: Banking System
+
+Problem Statement:
+Design a Banking System with a base class Account that contains the following attributes:
+
+accountHolderName (String)
+
+accountNumber (String)
+
+balance (double)
+
+The Account class includes:
+
+A constructor to initialize accountHolderName, accountNumber, and balance.
+
+A method deposit(double amount) to deposit money into the account.
+
+A method withdraw(double amount) to withdraw money from the account, ensuring that the balance does not go below zero.
+
+Now, create two subclasses:
+
+SavingsAccount — This class adds an interest rate (interestRate), and includes a method applyInterest() to add interest to the balance.
+
+CurrentAccount — This class has an overdraft limit (overdraftLimit), and allows withdrawals even if the balance goes negative (but cannot exceed the overdraft limit).
+
+In the main() method, create instances of SavingsAccount and CurrentAccount, perform deposits, withdrawals, and apply interest where applicable.
+
+Requirements:
+
+Use constructor chaining for the Account class.
+
+Override deposit() and withdraw() as necessary in both subclasses.
+
+Demonstrate polymorphism by treating SavingsAccount and CurrentAccount as Account objects and performing operations on them.
+
+Scenario 3: Employee Management System
+
+Problem Statement:
+Create an Employee Management System where the base class Employee has the following attributes:
+
+name (String)
+
+employeeId (int)
+
+salary (double)
+
+The Employee class includes:
+
+A constructor to initialize name, employeeId, and salary.
+
+A method calculateSalary() that simply returns the salary.
+
+Now, create two subclasses:
+
+Manager — Adds a bonus attribute (double), and overrides calculateSalary() to return salary + bonus.
+
+Developer — Adds programmingLanguages (String array), and overrides calculateSalary() to return salary + 10% of salary if the developer is proficient in Java, or the base salary otherwise.
+
+In the main() method, create instances of Manager and Developer, and use polymorphism to calculate the salaries for both.
+
+Requirements:
+
+Demonstrate method overriding and constructor chaining.
+
+Apply polymorphism to handle different calculateSalary() implementations in the Manager and Developer classes.
+
+Abstract Classes
+Scenario 1: Vehicle Management System
+
+Problem Statement:
+Create an abstract class Vehicle with the following attributes:
+
+make (String)
+
+model (String)
+
+year (int)
+
+Include the following methods:
+
+A constructor to initialize make, model, and year.
+
+An abstract method getFuelEfficiency() that returns the fuel efficiency of the vehicle (in miles per gallon).
+
+Now, create two subclasses:
+
+Car — This class has an additional attribute numDoors (int) and implements getFuelEfficiency() based on the engine type (e.g., petrol cars have lower efficiency).
+
+Truck — This class has an additional attribute cargoCapacity (double) and implements getFuelEfficiency() based on the truck's load capacity.
+
+Create an interface Maintenance with methods:
+
+performMaintenance() that prints "Performing maintenance."
+
+scheduleService() that prints "Scheduling service."
+
+Implement the Maintenance interface in both Car and Truck.
+
+Requirements:
+
+Demonstrate abstract methods and interface implementation.
+
+Use polymorphism to display the fuel efficiency for both Car and Truck.
+
+Implement the performMaintenance() and scheduleService() methods in both Car and Truck.
+
+Scenario 2: Device Management System
+
+Problem Statement:
+Design a system to manage different types of electronic devices. Create an abstract class Device with:
+
+deviceName (String)
+
+deviceID (String)
+
+batteryLevel (int)
+
+Include the following methods:
+
+A constructor to initialize deviceName, deviceID, and batteryLevel.
+
+An abstract method operate() that will be implemented by subclasses.
+
+Create two subclasses:
+
+Smartphone — Includes an additional attribute screenSize (double) and implements the operate() method to simulate operating the phone (e.g., "Making a call" or "Browsing the internet").
+
+Laptop — Includes an additional attribute processorType (String) and implements the operate() method to simulate using the laptop (e.g., "Running software" or "Coding").
+
+In the main() method, instantiate both Smartphone and Laptop and demonstrate polymorphism by calling the operate() method on instances of both subclasses.
+
+Requirements:
+
+Use abstract methods to enforce subclass implementation of the operate() method.
+
+Demonstrate polymorphism to call operate() on both Smartphone and Laptop objects.
+
+Interfaces
+Scenario 1: Payment System
+
+Problem Statement:
+Create an interface PaymentMethod with the following methods:
+
+processPayment(double amount) — Processes the payment.
+
+refundPayment(double amount) — Refunds a payment.
+
+Now, create two classes:
+
+CreditCardPayment — Implements PaymentMethod and processes payments via credit card.
+
+PaypalPayment — Implements PaymentMethod and processes payments via PayPal.
+
+Both classes must implement the processPayment() and refundPayment() methods.
+
+In the main() method, demonstrate the usage of polymorphism by processing payments with both CreditCardPayment and PaypalPayment using the same interface reference.
+
+Requirements:
+
+Demonstrate interface implementation and polymorphism with processPayment() and refundPayment() methods.
+
+Ensure the payment is processed and refunded correctly for both payment methods.
+
+Scenario 2: Media Player System
+
+Problem Statement:
+Create an interface Playable with a method play() that prints "Playing media".
+
+Now, create two classes:
+
+AudioPlayer — Implements Playable and adds a method stop() to stop the music.
+
+VideoPlayer — Implements Playable and adds a method pause() to pause the video.
+
+In the main() method, instantiate both AudioPlayer and VideoPlayer, and demonstrate calling the play(), stop(), and pause() methods.
+
+Requirements:
+
+Implement multiple methods in the interface and use polymorphism to call them.
+
+Ensure both AudioPlayer and VideoPlayer provide the required methods and functionality.
+
+Scenario 3: Product Management System
+
+Problem Statement:
+Create an interface Product with the following methods:
+
+getProductInfo() — Returns the product's details.
+
+getPrice() — Returns the price of the product.
+
+Now, create two classes:
+
+Electronics — Implements Product and adds warrantyPeriod (int).
+
+Clothing — Implements Product and adds size (String).
+
+Both classes should implement the getProductInfo() and getPrice() methods, and each should return the product information and price.
+
+Requirements:
+
+Use interface implementation to standardize the way product information and price are retrieved across different product types.
+
+Demonstrate polymorphism to handle products as Product objects and call their respective methods.
+
+Encapsulation
+Scenario 1: Employee Salary Management
+
+Problem Statement:
+Design a system for managing employee salaries. Create a class Employee with private attributes:
+
+employeeName (String)
+
+employeeId (String)
+
+salary (double)
+
+Provide public getter and setter methods for all attributes. The class should also include a method increaseSalary(double percentage) that increases the salary by a given percentage.
+
+In the main() method, create an instance of Employee, set the salary, and increase it using the increaseSalary() method.
+
+Requirements:
+
+Demonstrate encapsulation by keeping employee details private and providing access through getters and setters.
+
+Ensure that the salary increase is handled correctly, and demonstrate the use of setter methods.
+
+Scenario 2: Bank Account System with Validation
+
+Problem Statement:
+Create a BankAccount class with the following private attributes:
+
+accountNumber (String)
+
+balance (double)
+
+Include the following methods:
+
+A getter for balance.
+
+A method deposit(double amount) to deposit funds, ensuring that the deposit amount is positive.
+
+A method withdraw(double amount) to withdraw funds, ensuring that the withdrawal amount does not exceed the balance.
+
+Use encapsulation to ensure that the balance cannot be accessed directly, and provide validation for deposit and withdrawal amounts.
+
+In the main() method, create an instance of BankAccount, deposit funds, and withdraw funds while demonstrating proper validation.
+
+Requirements:
+
+Demonstrate data validation and encapsulation in managing account balances.
+
+Ensure that all financial transactions are securely handled.
